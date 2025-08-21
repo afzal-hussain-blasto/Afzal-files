@@ -13,7 +13,7 @@ body {
   scroll-behavior: smooth;
   min-height: 100vh;
 
-  /* Neon grid background */
+  
   background-image: 
     linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
@@ -149,14 +149,14 @@ footer {
   color: var(--text);
 }
 
-/* Dark mode (inverted neon colors) */
+
 .dark-mode {
   --bg: #000000;
   --text: #ff00ff;
   --accent: #00ffff;
   --grid: rgba(255, 0, 255, 0.1);
 }
-/* ... all your existing styles ... */
+
 
 footer {
   text-align: center;
@@ -167,7 +167,7 @@ footer {
   color: var(--text);
 }
 
-/* Neon cursor styles */
+
 .cursor {
   display: inline-block;
   color: var(--accent);
@@ -180,11 +180,11 @@ footer {
   opacity: 0;
 }
 .container {
-  max-width: 1100px;   /* keep content from stretching too wide */
-  margin-left: auto;   /* center horizontally */
+  max-width: 1100px;   
+  margin-left: auto;   
   margin-right: auto;
-  padding-left: 20px;  /* space on left */
-  padding-right: 20px; /* space on right */
+  padding-left: 20px;  
+  padding-right: 20px; 
 }
 .skill-bar span {
   color: black;
@@ -193,7 +193,7 @@ footer {
 body, .project, .skill-bar, .modal-content {
   transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
 }
-/* Tron Modal */
+
 .tron-modal {
   display: none;
   position: fixed;
@@ -265,7 +265,7 @@ body, .project, .skill-bar, .modal-content {
     opacity: 1;
   }
 }
-/* TRON MODAL BASE */
+
 .tron-modal {
   display: none; 
   position: fixed;
@@ -278,7 +278,7 @@ body, .project, .skill-bar, .modal-content {
   align-items: center;
 }
 
-/* MODAL CONTENT */
+
 .tron-modal-content {
   background: black;
   border: 2px solid cyan;
@@ -291,7 +291,7 @@ body, .project, .skill-bar, .modal-content {
   animation: glowIn 0.4s ease;
 }
 
-/* CLOSE BUTTON */
+
 .close-btn {
   float: right;
   font-size: 28px;
@@ -304,7 +304,7 @@ body, .project, .skill-bar, .modal-content {
   text-shadow: 0 0 20px magenta;
 }
 
-/* INPUTS & TEXTAREA */
+
 .tron-modal-content input,
 .tron-modal-content textarea {
   width: 100%;
@@ -327,7 +327,7 @@ body, .project, .skill-bar, .modal-content {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
-/* TRON FORM */
+
 .tron-form {
   display: flex;
   flex-direction: column;
@@ -336,7 +336,7 @@ body, .project, .skill-bar, .modal-content {
   margin: auto;
 }
 
-/* INPUTS & TEXTAREA */
+
 .tron-form input,
 .tron-form textarea {
   background: black;
@@ -357,7 +357,7 @@ body, .project, .skill-bar, .modal-content {
   outline: none;
 }
 
-/* TRON BUTTON */
+
 .tron-form button {
   background: black;
   border: 2px solid cyan;
@@ -377,14 +377,14 @@ body, .project, .skill-bar, .modal-content {
   color: magenta;
   box-shadow: 0 0 20px magenta, inset 0 0 20px magenta;
 }
-/* Tron Toggle Container */
+
 .tron-toggle {
   display: flex;
   justify-content: center;
   margin: 20px 0;
 }
 
-/* Tron Toggle Box */
+
 .toggle-label {
   display: flex;
   align-items: center;
@@ -403,12 +403,10 @@ body, .project, .skill-bar, .modal-content {
   box-shadow: 0 0 20px magenta, inset 0 0 15px magenta;
 }
 
-/* Hide default checkbox */
 .toggle-label input {
   display: none;
 }
 
-/* Neon Toggle Text */
 .toggle-text {
   font-size: 1rem;
   font-weight: bold;
@@ -417,12 +415,10 @@ body, .project, .skill-bar, .modal-content {
   transition: color 0.3s, text-shadow 0.3s;
 }
 
-/* When checked → change to magenta glow */
 .toggle-label input:checked + .toggle-text {
   color: magenta;
   text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 40px magenta;
 }
-/* Light Mode Overrides */
 body.light-mode {
   background: #f5f5f5;
   color: black;
@@ -443,8 +439,8 @@ body.light-mode .tron-toggle .toggle-label {
   color: black;
 }
 :root {
-  --accent: #0ff; /* neon cyan */
-  --bg: #000;     /* always dark */
+  --accent: #0ff; 
+  --bg: #000;     
   --text: #fff;
 }
 
@@ -454,9 +450,9 @@ body {
   font-family: 'Orbitron', sans-serif;
 }
 
-/* Tron neon style toggle (changes only accent color) */
+
 body.alt-accent {
-  --accent: #f0f; /* neon magenta */
+  --accent: #f0f; 
 }
 
 .tron-btn,
