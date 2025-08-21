@@ -1,0 +1,470 @@
+:root {
+  --bg: #0a0a0f;
+  --text: #00f6ff;
+  --accent: #00ffcc;
+  --grid: rgba(0, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+  min-height: 100vh;
+
+  /* Neon grid background */
+  background-image: 
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+header {
+  background: rgba(0,0,0,0.8);
+  border-bottom: 2px solid var(--accent);
+  box-shadow: 0 0 15px var(--accent);
+  color: var(--text);
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 10px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 5px var(--accent), 0 0 15px var(--accent);
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #fff, 0 0 20px var(--accent);
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px var(--accent), 0 0 15px var(--accent);
+}
+
+section {
+  padding: 2em;
+  border-bottom: 1px solid var(--grid);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1em;
+}
+
+.project {
+  background: rgba(0,0,0,0.7);
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 1em;
+  text-align: center;
+  font-weight: bold;
+  color: var(--text);
+  box-shadow: 0 0 10px var(--accent);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+}
+
+.skill-bar {
+  margin: 10px 0;
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  padding: 0.5em;
+  color: var(--text);
+  text-shadow: 0 0 5px var(--accent);
+  overflow: hidden;
+}
+
+.skill-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: var(--percent);
+  background: var(--accent);
+  box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+  transition: width 1s ease-in-out;
+  z-index: -1;
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #111;
+  border: 2px solid var(--accent);
+  padding: 2em;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 12px;
+  position: relative;
+  color: var(--text);
+  box-shadow: 0 0 20px var(--accent);
+}
+
+#modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: rgba(0,0,0,0.8);
+  border-top: 2px solid var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  color: var(--text);
+}
+
+/* Dark mode (inverted neon colors) */
+.dark-mode {
+  --bg: #000000;
+  --text: #ff00ff;
+  --accent: #00ffff;
+  --grid: rgba(255, 0, 255, 0.1);
+}
+/* ... all your existing styles ... */
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: rgba(0,0,0,0.8);
+  border-top: 2px solid var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  color: var(--text);
+}
+
+/* Neon cursor styles */
+.cursor {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: bold;
+  text-shadow: 0 0 5px var(--accent), 0 0 15px var(--accent), 0 0 30px var(--accent);
+  transition: opacity 0.2s;
+}
+
+.cursor.hidden {
+  opacity: 0;
+}
+.container {
+  max-width: 1100px;   /* keep content from stretching too wide */
+  margin-left: auto;   /* center horizontally */
+  margin-right: auto;
+  padding-left: 20px;  /* space on left */
+  padding-right: 20px; /* space on right */
+}
+.skill-bar span {
+  color: black;
+  font-weight: bold;
+}
+body, .project, .skill-bar, .modal-content {
+  transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+/* Tron Modal */
+.tron-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+}
+
+.tron-modal-content {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--accent);
+  border-radius: 15px;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+  animation: modalGlow 0.5s ease;
+  text-align: center;
+}
+
+.tron-modal-content h2 {
+  color: var(--accent);
+  text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent);
+  margin-bottom: 15px;
+}
+
+.tron-modal-content input,
+.tron-modal-content textarea {
+  width: 90%;
+  margin: 10px 0;
+  padding: 10px;
+  background: black;
+  border: 1px solid var(--accent);
+  color: cyan;
+  font-family: inherit;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.tron-modal-content textarea {
+  height: 80px;
+  resize: none;
+}
+
+.tron-close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--accent);
+  text-shadow: 0 0 5px var(--accent);
+  transition: 0.3s;
+}
+
+.tron-close:hover {
+  color: white;
+  text-shadow: 0 0 10px white;
+}
+
+@keyframes modalGlow {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* TRON MODAL BASE */
+.tron-modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+}
+
+/* MODAL CONTENT */
+.tron-modal-content {
+  background: black;
+  border: 2px solid cyan;
+  box-shadow: 0 0 20px cyan, inset 0 0 20px cyan;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 15px;
+  text-align: center;
+  animation: glowIn 0.4s ease;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+  color: cyan;
+  text-shadow: 0 0 10px cyan;
+}
+.close-btn:hover {
+  color: magenta;
+  text-shadow: 0 0 20px magenta;
+}
+
+/* INPUTS & TEXTAREA */
+.tron-modal-content input,
+.tron-modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: black;
+  border: 1px solid cyan;
+  color: cyan;
+  font-family: inherit;
+  box-shadow: 0 0 10px cyan inset;
+}
+.tron-modal-content input:focus,
+.tron-modal-content textarea:focus {
+  outline: none;
+  border-color: magenta;
+  box-shadow: 0 0 15px magenta inset;
+}
+
+@keyframes glowIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* TRON FORM */
+.tron-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
+}
+
+/* INPUTS & TEXTAREA */
+.tron-form input,
+.tron-form textarea {
+  background: black;
+  border: 2px solid cyan;
+  color: cyan;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px cyan, inset 0 0 10px cyan;
+  transition: 0.3s;
+}
+
+.tron-form input:focus,
+.tron-form textarea:focus {
+  border-color: magenta;
+  box-shadow: 0 0 15px magenta, inset 0 0 15px magenta;
+  outline: none;
+}
+
+/* TRON BUTTON */
+.tron-form button {
+  background: black;
+  border: 2px solid cyan;
+  padding: 12px;
+  font-size: 1.1rem;
+  color: cyan;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 0 15px cyan, inset 0 0 15px cyan;
+  transition: all 0.3s ease;
+}
+
+.tron-form button:hover {
+  border-color: magenta;
+  color: magenta;
+  box-shadow: 0 0 20px magenta, inset 0 0 20px magenta;
+}
+/* Tron Toggle Container */
+.tron-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Tron Toggle Box */
+.toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  border: 2px solid cyan;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px cyan, inset 0 0 10px cyan;
+  transition: all 0.3s ease;
+}
+
+.toggle-label:hover {
+  border-color: magenta;
+  box-shadow: 0 0 20px magenta, inset 0 0 15px magenta;
+}
+
+/* Hide default checkbox */
+.toggle-label input {
+  display: none;
+}
+
+/* Neon Toggle Text */
+.toggle-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: cyan;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* When checked → change to magenta glow */
+.toggle-label input:checked + .toggle-text {
+  color: magenta;
+  text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 40px magenta;
+}
+/* Light Mode Overrides */
+body.light-mode {
+  background: #f5f5f5;
+  color: black;
+}
+
+body.light-mode .section-title {
+  color: magenta;
+  text-shadow: 0 0 8px magenta, 0 0 15px magenta;
+}
+
+body.light-mode .project,
+body.light-mode .skill-bar,
+body.light-mode .contact-form,
+body.light-mode .tron-toggle .toggle-label {
+  border-color: magenta;
+  box-shadow: 0 0 12px magenta, inset 0 0 8px magenta;
+  background: white;
+  color: black;
+}
+:root {
+  --accent: #0ff; /* neon cyan */
+  --bg: #000;     /* always dark */
+  --text: #fff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Tron neon style toggle (changes only accent color) */
+body.alt-accent {
+  --accent: #f0f; /* neon magenta */
+}
+
+.tron-btn,
+.toggle-label,
+nav a,
+h2,
+.cursor {
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+  border-color: var(--accent);
+}
