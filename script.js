@@ -1,4 +1,4 @@
-// Typing effect
+
 const textArray = ["Web Developer", "Creative Coder", "UI / UX Designer"];
 let index = 0;
 let charIndex = 0;
@@ -26,7 +26,7 @@ function erase() {
   }
 }
 
-// Neon blinking cursor
+
 function blinkCursor() {
   cursor.classList.toggle("hidden");
 }
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(blinkCursor, 500); // blinking effect
 });
 
-// Project Modal logic
+
 function openModal(title, body) {
   document.getElementById("modal").classList.remove("hidden");
   document.getElementById("modal-title").textContent = title;
@@ -47,7 +47,7 @@ document.getElementById("modal-close").onclick = () => {
   document.getElementById("modal").classList.add("hidden");
 };
 
-// Tron Toggle Accent Mode
+
 const modeToggle = document.getElementById("modeToggle");
 if (modeToggle) {
   modeToggle.addEventListener("change", () => {
@@ -55,7 +55,7 @@ if (modeToggle) {
   });
 }
 
-// Contact Modal Logic (cleaned)
+
 const contactModal = document.getElementById("contactModal");
 const openBtn = document.getElementById("openContactBtn");
 const closeBtn = document.getElementById("closeModal");
