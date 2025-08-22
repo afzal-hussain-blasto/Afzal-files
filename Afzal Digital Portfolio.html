@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="Style.css"/>
+</head>
+<body>
+  <header>
+    <h1>
+      <span id="typed-text"></span>
+      <span class="cursor">|</span>
+    </h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+
+
+      <div class="tron-toggle">
+        <label class="toggle-label">
+          <input type="checkbox" id="modeToggle">
+          <span class="toggle-text"> DON'T TAP⚠️</span>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p><mark>I am Afzal Hussain</mark>, a creative developer with a passion for modern web technologies. I have a soft spot for technologies,I enjoy blending creativity with technology to design futuristic, user-friendly web experiences. My approach is inspired by neon aesthetics and the energy of sci-fi worlds, where every interface feels alive and interactive. Beyond coding, I’m curious about how design influences emotions and how small details can transform a simple website into a memorable journey.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project" onclick="openModal('Project 1', 'I have created a website to transfer files,just upload and download mini files with just one password,no log in / sign in is required ,do visit:https://afzalblasto.github.io/Download-And-Upload/')">
+        Project 1
+      </div>
+      <div class="project" onclick="openModal('Project 2', 'This digital portfolio website your are viewing right now is my another project of which delivers a responsive futuristic simple neon based with colour changing and content navigating through titles ')">
+        Project 2
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-bar" data-skill="HTML" style="--percent: 90%"><span>HTML</span></div>
+    <div class="skill-bar" data-skill="CSS" style="--percent: 80%"><span>CSS</span></div>
+    <div class="skill-bar" data-skill="JS" style="--percent: 75%"><span>JavaScript</span></div>
+  </section>
+
+  <section id="contact">
+    <h2 class="tron-title">CONTACT</h2>
+    <form class="tron-form" novalidate>
+    <form class="tron-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit" class="tron-btn">Send</button>
+    </form>
+  </section>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="modal-close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-body"></p>
+    </div>
+  </div>
+
+  <footer>© 2025 Afzal Hussain</footer>
+
+  <script src="Script.js"></script>
+</body>
+</html>
