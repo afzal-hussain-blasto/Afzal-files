@@ -279,3 +279,19 @@ body.alt-accent {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+.social-btn {
+  margin-left: 15px;
+  display: inline-block;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 0 5px var(--accent)) drop-shadow(0 0 10px var(--accent));
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px magenta) drop-shadow(0 0 20px magenta);
+}
