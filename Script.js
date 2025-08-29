@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function openModal(title, body) {
   document.getElementById("modal").classList.remove("hidden");
   document.getElementById("modal-title").textContent = title;
-  document.getElementById("modal-body").textContent = body;
+  document.getElementById("modal-body").innerHTML= body;
 }
 
 document.getElementById("modal-close").onclick = () => {
